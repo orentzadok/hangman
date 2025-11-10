@@ -1,9 +1,10 @@
 #!/bin/python3
 import random
 
-def check_word(word):
-	if guessed_letter==word_to_guess:
-		
+#def check_word(word):
+#	if guessed_letter==word_to_guess:
+#		win=True
+
 list_of_words=["oren","red","yellow","bus"]
 word_to_guess=random.choice(list_of_words)
 #print(word_to_guess)

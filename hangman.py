@@ -8,8 +8,6 @@ def check_word(word):
 
 def check_index_in_string(word_to_guess,letter):
 	index=word_to_guess.index(letter)
-#	print(word_to_guess)
-#	print(letter)
 	print(index)
 	return index
 
@@ -29,7 +27,7 @@ while(errors<5 and not end):
 			print(f"the letter {letter} exists")
 			index=check_index_in_string(word_to_guess,letter)
 			print(solution[:index])
-			solution=solution[:index]+letter+solution[index:]
+			solution=solution[:index]+letter+solution[(index+1):]
 			print(solution)
 		else:
 			print("wrong")

@@ -35,16 +35,58 @@ def update_list(list,index,letter):
     list.pop(index + 1)
     return list
 
+def hangman():
+    hangman_paint=["""
+        +---+
+        |   |
+    ================""",
+        """
+    +---+
+    |   |
+        |
+        |
+        |
+    ==============""",
+        """
+        +---+
+        |   |
+        0   |
+            |
+            |
+    ==========""",
+    """
+        +---+
+        |   |
+        0   |
+        |   |
+            |
+    ==========""",
+    """
+        +---+
+        |   |
+        0   |
+        |   |
+       /|\\ |
+    ==========""",
+    """
+     +---+
+        |   |
+        0   |
+       /|\\ |
+       /|\\ |
+    =========="""
+
+     ]
+    return hangman_paint
 end=False
 list_of_words=["oreen","reed","yellow","buus","helllo","ggggg"]
 word_to_guess=random.choice(list_of_words)
-#print(word_to_guess)
 errors=0
 used_letters=[]
 solution=""
 list=[]
 list=under_score(word_to_guess,list)
-while(errors<5 and not end):
+while(errors<6 and not end):
         letter=input("enter a letter  ")
         if letter in used_letters:
                 print(f"the letter {letter} was chosen before, choose another letter")
@@ -69,6 +111,8 @@ while(errors<5 and not end):
                 else:
                         print("wrong")
                         errors=errors+1
+                        hang=hangman()
+                        print(hang[errors-1])
                 used_letters.append(letter)
 
         print(used_letters)

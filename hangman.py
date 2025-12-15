@@ -14,9 +14,12 @@ def check_index_in_string(word_to_guess,letter,index,count):
         index=word_to_guess.find(letter, index)
     else:
         index = word_to_guess.find(letter, index+1)
+    #print(type(index))
+    #check_more_then_once(letter,word_to_guess)
     return index
 
 def check_more_then_once(letter,word_to_guess):
+    #print(word_to_guess[index+1:])
     count=word_to_guess.count(letter)
     return (count)
 
@@ -24,6 +27,7 @@ def under_score(word,list):
     print(len(word))
     for i in range(len(word)):
         list.insert(i,"_")
+    #print(list)
     return list
 
 def update_list(list,index,letter):
@@ -62,14 +66,14 @@ def hangman():
         |   |
         0   |
         |   |
-       /|\\  |
+       /|\\ |
     ==========""",
     """
      +---+
         |   |
         0   |
-       /|\\  |
-       /|\\  |
+       /|\\ |
+       /|\\ |
     =========="""
 
      ]
@@ -90,6 +94,8 @@ while(errors<6 and not end):
                 if letter in word_to_guess:
                     print(f"the letter {letter} exists")
                     count=check_more_then_once(letter, word_to_guess)
+                    #if count>1:
+                    #print(count)
                     i=1
                     index=0
                     if count==1:
